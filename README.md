@@ -38,3 +38,7 @@ const userIns = new Users({
     });
     userIns.save();
 ```
+
+## License
+
+Relay is [MIT licensed](./LICENSE).
