@@ -1,0 +1,58 @@
+{
+  "name": "express-mongodb-excel-import",
+  "version": "1.0.0",
+  "description": "Import data from excel to mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -V index.js",
+    "eslint": "eslint src",
+    "prettier": "prettier 'src/**/*.js'",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "lint-staged": "lint-staged"
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "pre-commit": "lint-staged",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HWBN1/express-mongodb-excel-import.git"
+  },
+  "keywords": [
+    "excel-import"
+  ],
+  "author": "Mohamed Hamed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HWBN1/express-mongodb-excel-import/issues"
+  },
+  "homepage": "https://github.com/HWBN1/express-mongodb-excel-import#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.4",
+    "nodemon": "^1.18.4",
+    "xlsx": "^0.14.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.1",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "23.6.0",
+    "lint-staged": "^7.0.5",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.11.1"
+  }
+}
