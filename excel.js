@@ -1,24 +1,26 @@
 const XLSX = require('xlsx');
 const Users = require('./collections/Users');
 
-const Sheet = 'Sheet1';
-const MAX = 1000000;
+const filePath = 'users.xlsx';
+const sheet = 'Sheet1';
+const requiredColumn = 'A';
+const maximumRowNumber = 1000000;
 
 class Excel {
   async importData() {
     /* Promise all take array of independent commands */
-    await Promise.all([this.importUsers('users.xlsx', 'A')]).then(() => {
+    await Promise.all([this.importUsers()]).then(() => {
       console.log('Uploaded finished!................... ^_^');
     });
   }
 
-  async importUsers(filePath, requiredColumn) {
+  async importUsers() {
     const xlsx = XLSX.readFile(filePath);
-    const range = xlsx.Sheets[Sheet];
+    const range = xlsx.Sheets[sheet];
 
     console.log('Users data uploaded...');
 
-    for (let row = 2; row <= MAX; ++row) {
+    for (let row = 2; row <= maximumRowNumber; ++row) {
       if (!range[`${requiredColumn}${row}`]) {
         break; // stop if no another  data
       }
