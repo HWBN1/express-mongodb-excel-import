@@ -22,7 +22,7 @@ const requiredColumn = 'A';				// A Column which always has data
 const maximumRowNumber = 1000000;		// Maximum numbers of rows
 ```
 
-create new object with excel data 
+create a new object with excel data 
 
 ```
 const XLSX = require('xlsx');
